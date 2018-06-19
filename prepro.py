@@ -84,7 +84,6 @@ def process_file(filename, data_type, word_counter, char_counter):
         print("{} questions in total".format(len(examples)))
     return examples, eval_examples
 
-
 def get_embedding(counter, data_type, limit=-1, emb_file=None, size=None, vec_size=None):
     print("Generating {} embedding...".format(data_type))
     embedding_dict = {}
@@ -123,7 +122,6 @@ def get_embedding(counter, data_type, limit=-1, emb_file=None, size=None, vec_si
     return emb_mat, token2idx_dict
 
 def convert_to_features(config, data, word2idx_dict, char2idx_dict):
-
     example = {}
     context, question = data
     context = context.replace("''", '" ').replace("``", '" ')
@@ -202,6 +200,9 @@ def build_features(config, examples, data_type, out_file, word2idx_dict, char2id
     meta = {}
     for example in tqdm(examples):
         total_ += 1
+
+        if len(example["y2s"]) == 0:
+            continue
 
         if filter_func(example, is_test):
             continue

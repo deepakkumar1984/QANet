@@ -12,9 +12,9 @@ from main import train, test, demo
 flags = tf.flags
 
 home = os.getcwd()
-train_file = os.path.join(home, "datasets", "squad", "train-v1.1.json")
-dev_file = os.path.join(home, "datasets", "squad", "dev-v1.1.json")
-test_file = os.path.join(home, "datasets", "squad", "dev-v1.1.json")
+train_file = os.path.join(home, "datasets", "squad", "train-v2.0.json")
+dev_file = os.path.join(home, "datasets", "squad", "dev-v2.0.json")
+test_file = os.path.join(home, "datasets", "squad", "dev-v2.0.json")
 glove_word_file = os.path.join(home, "datasets", "glove", "glove.840B.300d.txt")
 
 train_dir = "train"
@@ -96,7 +96,7 @@ flags.DEFINE_boolean("is_bucket", False, "build bucket batch iterator or not")
 flags.DEFINE_list("bucket_range", [40, 401, 40], "the range of bucket")
 
 flags.DEFINE_integer("batch_size", 32, "Batch size")
-flags.DEFINE_integer("num_steps", 60000, "Number of steps")
+flags.DEFINE_integer("num_steps", 340000, "Number of steps")
 flags.DEFINE_integer("checkpoint", 1000, "checkpoint to save and evaluate the model")
 flags.DEFINE_integer("period", 100, "period to save batch loss")
 flags.DEFINE_integer("val_num_batches", 150, "Number of batches to evaluate the model")
@@ -105,8 +105,8 @@ flags.DEFINE_float("grad_clip", 5.0, "Global Norm gradient clipping rate")
 flags.DEFINE_float("learning_rate", 0.001, "Learning rate")
 flags.DEFINE_float("decay", 0.9999, "Exponential moving average decay")
 flags.DEFINE_float("l2_norm", 3e-7, "L2 norm scale")
-flags.DEFINE_integer("hidden", 96, "Hidden size")
-flags.DEFINE_integer("num_heads", 1, "Number of heads in self attention")
+flags.DEFINE_integer("hidden", 128, "Hidden size")
+flags.DEFINE_integer("num_heads", 8, "Number of heads in self attention")
 flags.DEFINE_integer("early_stop", 10, "Checkpoints for early stop")
 
 # Extensions (Uncomment corresponding code in download.sh to download the required data)

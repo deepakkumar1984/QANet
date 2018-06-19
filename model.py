@@ -68,7 +68,7 @@ class Model(object):
     def forward(self):
         config = self.config
         N, PL, QL, CL, d, dc, nh = config.batch_size if not self.demo else 1, self.c_maxlen, self.q_maxlen, config.char_limit, config.hidden, config.char_dim, config.num_heads
-
+        print("num heads: " + str(nh))
         with tf.variable_scope("Input_Embedding_Layer"):
             ch_emb = tf.reshape(tf.nn.embedding_lookup(
                 self.char_mat, self.ch), [N * PL, CL, dc])
