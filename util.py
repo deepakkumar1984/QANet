@@ -8,7 +8,6 @@ This file is taken and modified from R-Net by HKUST-KnowComp
 https://github.com/HKUST-KnowComp/R-Net
 '''
 
-
 def get_record_parser(config, is_test=False):
     def parse(example):
         para_limit = config.test_para_limit if is_test else config.para_limit
