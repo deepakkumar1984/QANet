@@ -41,7 +41,6 @@ test_meta = os.path.join(target_dir, "test_meta.json")
 word_dictionary = os.path.join(target_dir, "word_dictionary.json")
 char_dictionary = os.path.join(target_dir, "char_dictionary.json")
 answer_file = os.path.join(answer_dir, "answer.json")
-num_gpus = 2
 
 if not os.path.exists(target_dir):
     os.makedirs(target_dir)
@@ -110,6 +109,7 @@ flags.DEFINE_integer("hidden", 128, "Hidden size")
 flags.DEFINE_integer("num_heads", 8, "Number of heads in self attention")
 flags.DEFINE_integer("early_stop", 10, "Checkpoints for early stop")
 
+flags.DEFINE_integer("num_gpus", 2, "No. of GPUs to use for training.")
 
 # Extensions (Uncomment corresponding code in download.sh to download the required data)
 glove_char_file = os.path.join(home, "data", "glove", "glove.840B.300d-char.txt")
