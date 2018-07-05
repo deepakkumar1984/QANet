@@ -32,7 +32,7 @@ def train(config):
     print("Building model...")
     parser = get_record_parser(config)
     graph = tf.Graph()
-    with graph.as_default(), tf.device('/cpu:0') as g:
+    with graph.as_default() as g:
         train_dataset = get_batch_dataset(config.train_record_file, parser, config)
         dev_dataset = get_dataset(config.dev_record_file, parser, config)
         handle = tf.placeholder(tf.string, shape=[])
