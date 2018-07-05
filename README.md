@@ -41,7 +41,7 @@ python config.py --mode debug/train/test/demo
 
 To evaluate the model with the official code, run
 ```bash
-python evaluate-v1.1.py ~/data/squad/dev-v2.0.json train/{model_name}/answer/answer.json
+python evaluate-v2.0.py ~/data/squad/dev-v2.0.json train/{model_name}/answer/answer.json
 ```
 
 The default directory for the tensorboard log file is `train/{model_name}/event`
