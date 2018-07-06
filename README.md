@@ -68,17 +68,7 @@ Pretrained model weights are temporarily not available.
   * This model uses a training / testing / preprocessing pipeline from [R-Net](https://github.com/HKUST-KnowComp/R-Net) for improved efficiency.
 
 ## Results
-Here are the collected results from this repository and the original paper.
-
-|      Model     | Training Steps | Size | Attention Heads | Data Size (aug) |  EM  |  F1  |
-|:--------------:|:--------------:|:----:|:---------------:|:---------------:|:----:|:----:|
-|       My model |     35,000     |  96  |        1        |   87k (no aug)  | 69.0 | 78.6 |
-|       My model |     60,000     |  96  |        1        |   87k (no aug)  | 70.4 | 79.6 |
-|       My model ( reported by [@jasonbw](https://github.com/jasonwbw))|     60,000     |  128  |        1        |   87k (no aug)  | 70.7 | 79.8 |
-|       My model ( reported by [@chesterkuo](https://github.com/chesterkuo))|     60,000     |  128  |        8        |   87k (no aug)  | 70.8 | 80.1 |
-| Original Paper |     35,000     |  128 |        8        |   87k (no aug)  |  NA  | 77.0 |
-| Original Paper |     150,000    |  128 |        8        |   87k (no aug)  | 73.6 | 82.7 |
-| Original Paper |     340,000    |  128 |        8        |    240k (aug)   | 75.1 | 83.8 |
+Not yet for SQUAD2.....
 
 ## TODO's
 - [ ] Training and testing the model
